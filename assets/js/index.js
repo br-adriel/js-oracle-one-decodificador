@@ -6,6 +6,7 @@ const resultTextDiv = document.querySelector('.result-text');
 const resultTextParagraph = resultTextDiv.querySelector('p');
 const cryptButton = document.querySelector('#crypt-button');
 const decryptButton = document.querySelector('#decrypt-button');
+const copyButton = document.querySelector('#copy-button');
 
 function pressButton(callback) {
   if (textInput.value.length === 0) {
@@ -18,5 +19,11 @@ function pressButton(callback) {
   resultTextDiv.style.display = 'flex';
 }
 
+function copyResultingText() {
+  navigator.clipboard.writeText(resultTextParagraph.textContent);
+}
+
 cryptButton.addEventListener('click', () => pressButton(crypt));
 decryptButton.addEventListener('click', () => pressButton(decrypt));
+
+copyButton.addEventListener('click', copyResultingText);
