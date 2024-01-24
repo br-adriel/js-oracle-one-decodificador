@@ -62,7 +62,7 @@ button:hover {
 
 .btn-light {
   color: var(--dark-blue-300);
-  background-color: #d8dfe8;
+  background-color: white;
   border: 1px solid var(--dark-blue-300);
 }
 
@@ -128,7 +128,7 @@ textarea:focus {
   text-align: center;
 }
 
-.resulting-text,
+.result-text,
 .no-messages {
   width: 28%;
   min-width: 400px;
