@@ -18,7 +18,7 @@
 
 body {
   background-color: var(--light-blue-100);
-  padding: 40px;
+  padding: 16px;
 }
 
 ::-moz-selection {
@@ -71,13 +71,25 @@ button:hover {
   margin: 0 auto;
 }
 
-.content {
+main,
+.content,
+.input-section,
+.help-text,
+.form-buttons,
+.result-text,
+.no-messages,
+.no-messages__content,
+footer,
+footer .social-links {
   display: flex;
 }
 
+.content,
 main {
-  display: flex;
-  height: 100dvh;
+  flex-direction: column;
+}
+
+main {
   gap: 40px;
   flex-grow: 1;
 }
@@ -93,7 +105,8 @@ main textarea {
   line-height: 150%; /* 48px */
   resize: none;
   flex-grow: 1;
-  padding-top: 80px;
+  padding-top: 56px;
+  min-height: 280px;
 }
 
 main textarea::placeholder {
@@ -107,19 +120,17 @@ textarea:focus {
 
 .input-section {
   flex-grow: 1;
-  display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .help-text {
-  display: flex;
   gap: 8px;
   color: var(--gray-400);
 }
 
 .form-buttons {
-  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
@@ -130,13 +141,10 @@ textarea:focus {
 
 .result-text,
 .no-messages {
-  width: 28%;
-  min-width: 400px;
   background-color: var(--white);
   border-radius: 32px;
   padding: 32px;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -164,9 +172,12 @@ textarea:focus {
 } */
 
 .no-messages__content {
-  display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.no-messages img {
+  display: none;
 }
 
 .no-messages h4 {
@@ -188,7 +199,6 @@ textarea:focus {
 }
 
 footer {
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 64px;
@@ -197,7 +207,6 @@ footer {
 }
 
 footer .social-links {
-  display: flex;
   align-items: center;
   gap: 4px;
 }
@@ -214,4 +223,49 @@ footer .social-links img {
   width: 24px;
   height: 24px;
   object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+
+  .form-buttons {
+    flex-direction: row;
+  }
+
+  main textarea {
+    padding-top: 116px;
+    min-height: 60dvh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    padding: 0 44px;
+  }
+
+  body {
+    padding: 40px;
+  }
+
+  .content,
+  main {
+    flex-direction: row;
+    height: 100dvh;
+  }
+
+  .result-text,
+  .no-messages {
+    width: 28%;
+    min-width: 400px;
+  }
+
+  main textarea {
+    padding-top: 80px;
+  }
+
+  .no-messages img {
+    display: block;
+  }
 }
