@@ -1,4 +1,4 @@
-const cryptSubstitute = {
+const cryptSubstitutionMap = {
   a: 'ai',
   e: 'enter',
   i: 'imes',
@@ -22,24 +22,11 @@ const decryptSubstitutionMap = {
  * @returns {string} - O texto criptografado com as vogais substituídas.
  */
 export function crypt(text) {
-  const vowels = Object.keys(cryptSubstitute).join('');
-  const vowelOcurrences = [];
-  text.split('').map((letter, i) => {
-    if (vowels.includes(letter)) {
-      vowelOcurrences.push(i);
-    }
-  });
-  vowelOcurrences.reverse();
-
-  let result = text;
-  vowelOcurrences.map((vowelIndex) => {
-    const beforeVowel = result.substring(0, vowelIndex);
-    const newVowel = cryptSubstitute[text[vowelIndex]];
-    const afterVowel = result.substring(vowelIndex + 1);
-    result = beforeVowel + newVowel + afterVowel;
-  });
-
-  return result;
+  const cryptedText = text.replace(
+    /a|e|i|o|u/g,
+    (match) => cryptSubstitutionMap[match]
+  );
+  return cryptedText;
 }
 
 /**
