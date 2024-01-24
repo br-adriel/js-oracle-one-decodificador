@@ -6,7 +6,7 @@ const cryptSubstitute = {
   u: 'ufat',
 };
 
-const decryptSubstitute = {
+const decryptSubstitutionMap = {
   ai: 'a',
   enter: 'e',
   imes: 'i',
@@ -40,4 +40,19 @@ export function crypt(text) {
   });
 
   return result;
+}
+
+/**
+ * Descriptografa o texto fornecido, substituindo substrings específicas pelos
+ * seus respectivos caracteres.
+ *
+ * @param {string} text - O texto de entrada a ser descriptografado.
+ * @returns {string} - O texto descriptografado.
+ */
+export function decrypt(text) {
+  const decryptedText = text.replace(
+    /ai|enter|imes|ober|ufat/g,
+    (match) => decryptSubstitutionMap[match]
+  );
+  return decryptedText;
 }
