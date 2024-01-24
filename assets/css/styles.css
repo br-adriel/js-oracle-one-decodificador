@@ -191,12 +191,27 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   margin-top: 64px;
   gap: 12px;
+  font-size: 0.85rem;
 }
 
-footer .social-link {
+footer .social-links {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 4px;
+}
+
+footer .social-links a {
+  transition: transform 300ms ease-out;
+}
+
+footer .social-links a:hover {
+  transform: scale(1.1);
+}
+
+footer .social-links img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
