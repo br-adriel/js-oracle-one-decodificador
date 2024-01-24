@@ -144,6 +144,25 @@ textarea:focus {
   text-align: center;
 }
 
+.result-text {
+  display: none;
+  align-items: stretch;
+  text-align: initial;
+}
+
+.result-text p {
+  flex-grow: 1;
+  color: var(--gray-400);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 36px */
+}
+
+/* .no-messages {
+  display: none;
+} */
+
 .no-messages__content {
   display: flex;
   flex-direction: column;
