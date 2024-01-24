@@ -4,28 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Decodificador</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Decodificador</h1>
-    </header>
-    <main>
-      <textarea
-        name="texto"
-        id="texto"
-        cols="30"
-        rows="10"
-        placeholder="Digite seu texto"
-      ></textarea>
-      <div>
-        <button>Criptografar</button>
-        <button>Descriptografar</button>
-      </div>
+    <div class="container">
+      <div class="content">
+        <header>
+          <h1>
+            <img src="./assets/img/Logo.svg" alt="Logo do site" />
+          </h1>
+        </header>
+        <main>
+          <section class="input-section">
+            <textarea
+              name="texto"
+              id="texto"
+              placeholder="Digite seu texto"
+            ></textarea>
+            <p class="help-text">
+              <img src="./assets/icons/info.svg" alt="" />
+              Apenas letras minúsculas e sem acento.
+            </p>
+            <div class="form-buttons">
+              <button class="btn-dark">Criptografar</button>
+              <button class="btn-light">Descriptografar</button>
+            </div>
+          </section>
 
-      <p>Texto resultante</p>
-    </main>
-    <footer>
-      <p>Adriel Santos, 2024</p>
-    </footer>
+          <div class="no-messages">
+            <img src="./assets/img/stars-searching.svg" alt="" />
+            <div class="no-messages__content">
+              <h4>Nenhuma mensagem encontrada</h4>
+              <p>
+                Digite um texto que você deseja criptografar ou descriptografar
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer>
+        <p>Adriel Santos, 2024</p>
+        <div class="social-links">
+          <a href="" rel="noopener noreferrer" title="LinkedIn"> Linkedin </a>
+          <a href="" rel="noopener noreferrer" title="Github"> Github </a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
